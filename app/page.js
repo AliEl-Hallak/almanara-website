@@ -68,11 +68,11 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <Image src="/Logo.png" alt="المنارة" width={600} height={100} />
+              <Image src="/L2.png" alt="المنارة" width={400} height={200} />
             </motion.div>
 
             {/* Title Typing Effect */}
-            <h1 className="mt-6 text-4xl md:text-5xl font-extrabold text-green-800 drop-shadow-lg">
+            <h1 className=" text-4xl md:text-5xl font-extrabold text-green-800 drop-shadow-lg">
               <TypeAnimation
                 sequence={[
                   "المنارة للتجارة",
@@ -139,7 +139,7 @@ export default function Home() {
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.4 }}
                     className="flex flex-col items-center text-center cursor-pointer"
-                    onClick={() => (window.location.href = "/products")}
+                    onClick={() => (window.location.href = "/#products")}
                   >
                     <Image
                       src={product.img}
@@ -160,14 +160,7 @@ export default function Home() {
         </div>
 
    {/* Scroll Down Indicator */}
-        {showScroll && (
-          <div className="absolute bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-green-700 transition-opacity duration-500">
-            <ChevronDown className="w-7 h-7 animate-bounce" />
-            <span className="text-sm font-medium mt-1 text-gray-700">
-              انزل لاكتشاف منتجاتنا الطبيعية
-            </span>
-          </div>
-        )}
+      
       </section>
 
 {/* PRODUCTS SECTION */}
@@ -286,6 +279,218 @@ export default function Home() {
   </div>
 </section>
 
+{/* WHY US SECTION */}
+<section
+  id="why-us"
+  className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b  py-20 px-6"
+>
+  {/* Başlık */}
+<motion.h2
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-3xl md:text-4xl font-extrabold text-green-700 mb-4 text-center"
+>
+  لماذا تختار منتجاتنا الطبيعية؟
+</motion.h2>
+
+<motion.p
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ delay: 0.3, duration: 0.8 }}
+  className="text-lg md:text-xl text-gray-600 mb-16 text-center max-w-2xl mx-auto leading-relaxed"
+>
+  نحن لا نقدم مجرد منتجات… بل أسلوب حياة صحي متوازن، 
+  يجمع بين الطبيعة والجودة والخبرة العالمية.
+</motion.p>
+
+
+  {/* Kartlar */}
+  <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl ">
+    {[
+      {
+        icon: "🌱",
+        title: "طبيعية 100%",
+        desc: "منتجات عضوية مستخلصة من الطبيعة للحفاظ على صحتك.",
+      },
+      {
+        icon: "🛡️",
+        title: "جودة عالية",
+        desc: "مضمونة ومعتمدة عالمياً بمعايير الجودة.",
+      },
+      {
+        icon: "⚡",
+        title: "طاقة وصحة",
+        desc: "تمنحك توازن طبيعي وحيوية في حياتك اليومية.",
+      },
+      {
+        icon: "💬",
+        title: "خدمة عملاء",
+        desc: "دعم سريع عبر الواتساب لمساعدتك دائماً.",
+      },
+    ].map((item, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: idx * 0.2, duration: 0.8 }}
+        whileHover={{ scale: 1.08, rotate: 1 }}
+        className="relative bg-white/40 backdrop-blur-lg rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl"
+      >
+        {/* Icon circle */}
+        <div className="w-20 h-20 flex items-center justify-center rounded-full bg-green-100 text-4xl shadow-md mb-6">
+          {item.icon}
+        </div>
+        <h3 className="text-xl font-bold text-green-800">{item.title}</h3>
+        <p className="mt-3 text-gray-700 leading-relaxed">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
+{/* ABOUT & CONTACT SECTION */}
+<section
+  id="about-contact"
+  className="relative py-20 px-6 bg-gradient-to-b from-white via-white to-green-50"
+>
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 ">
+    
+    {/* HAKKIMIZDA */}
+<motion.div
+  initial={{ opacity: 0, x: 50 }}   // sağdan başlar
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="bg-white rounded-xl shadow-lg p-8 min-h-[380px]"
+>
+      <h2 className="text-2xl font-bold text-green-700 mb-4 flex items-center justify-center gap-2">
+        🌿 من نحن؟
+      </h2>
+      <p className="text-gray-600 leading-relaxed text-center text-base">
+        نحن في <span className="font-semibold text-green-700">المنارة للتجارة</span> 
+        نؤمن أن <span className="font-semibold">الصحة تبدأ من الطبيعة</span>.  
+        اخترنا تقديم منتجات <span className="font-bold">DXN</span> الطبيعية 
+        والمعتمدة عالمياً لحياة صحية ومتوازنة.
+      </p>
+      <p className="text-gray-600 mt-4 leading-relaxed text-center text-base">
+        هدفنا نشر ثقافة العيش الصحي وبناء ثقة حقيقية 
+        مع عملائنا عبر منتجات طبيعية عالية الجودة.
+      </p>
+    </motion.div>
+
+    {/* İLETİŞİM FORMU */}
+<motion.div
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="bg-white rounded-xl shadow-lg p-8 min-h-[380px]"
+>
+      <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">
+        ✉️ تواصل معنا
+      </h2>
+
+      <form className="space-y-4">
+        <motion.input
+          whileFocus={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+          type="text"
+          placeholder="الاسم الكامل"
+          className="w-full rounded-lg px-4 py-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <motion.input
+          whileFocus={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+          type="email"
+          placeholder="البريد الإلكتروني"
+          className="w-full rounded-lg px-4 py-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <motion.textarea
+          whileFocus={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+          rows="3"
+          placeholder="رسالتك..."
+          className="w-full rounded-lg px-4 py-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+        ></motion.textarea>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          type="submit"
+          className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition"
+        >
+          إرسال الرسالة 🚀
+        </motion.button>
+      </form>
+    </motion.div>
+  </div>
+</section>
+
+{/* FOOTER */}
+{/* FOOTER (Modern & İnce) */}
+<footer className="bg-gradient-to-r from-green-700 to-green-900 text-white py-6 ">
+  <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-3">
+    
+    {/* Menü */}
+    <ul className="flex gap-6 text-sm font-medium">
+      <li><a href="#hero" className="hover:text-green-300 transition">الرئيسية</a></li>
+      <li><a href="#products" className="hover:text-green-300 transition">منتجاتنا</a></li>
+      <li><a href="#about-contact" className="hover:text-green-300 transition">من نحن</a></li>
+      <li><a href="#about-contact" className="hover:text-green-300 transition">اتصل بنا</a></li>
+    </ul>
+
+    {/* Sosyal Medya */}
+{/* Sosyal Medya */}
+<div className="flex gap-4 mt-2">
+  <a
+    href="https://wa.me/905360211145"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+    aria-label="WhatsApp"
+  >
+    <MessageCircle className="w-5 h-5" />
+  </a>
+
+  <a
+    href="#"
+    className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+    aria-label="Instagram"
+  >
+    <Instagram className="w-5 h-5" />
+  </a>
+
+  <a
+    href="#"
+    className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+    aria-label="Facebook"
+  >
+    <Facebook className="w-5 h-5" />
+  </a>
+</div>
+    {/* Alt Satır */}
+    <div className="mt-3 text-xs text-gray-300 text-center">
+      © 2025 المنارة للتجارة - جميع الحقوق محفوظة
+    </div>
+  </div>
+</footer>
+
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/905360211145"
+        target="_blank"
+        className="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-xl hover:bg-green-700 transition transform hover:scale-110 animate-bounce z-50"
+      >
+        <MessageCircle className="w-7 h-7" />
+      </a>
+
+      {/* Floating Email Button */}
+      <a
+        href="mailto:elmanara@almanaraticaret.com"
+        className="fixed bottom-6 left-6 bg-green-600 text-white p-4 rounded-full shadow-xl hover:bg-green-700 transition transform hover:scale-110 animate-bounce z-50"
+      >
+        <Mail className="w-6 h-6" />
+      </a>
     </main>
   );
 }
