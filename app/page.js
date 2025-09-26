@@ -28,16 +28,21 @@ export default function Home() {
   }, []);
 
   return (
-    <main dir="rtl" className="relative bg-white">
+<main dir="rtl" className="relative bg-white overflow-x-hidden">
       {/* HERO */}
       <section id="hero" className="relative min-h-dvh">
         {/* BG image sadece HERO’da */}
-        <Image
-          src="/Logo.png"
-          alt="خلفية طبيعية"
-          fill
-          className="object-cover opacity-20"
-        />
+      {/* Mobil için modern pattern */}
+
+
+{/* Desktop için tek büyük arka plan */}
+<Image
+  src="/Logo.png"
+  alt="خلفية طبيعية"
+  fill
+  className="object-cover opacity-20 hidden md:block"
+/>
+
 
         {/* Overlay: üstte yeşil → aşağı doğru beyaza bağlanır */}
 <div className="absolute inset-0 bg-gradient-to-b from-green-200/95 via-green-100/30 to-white/0"></div>
@@ -92,7 +97,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="mt-4 text-lg md:text-xl text-gray-700 max-w-md mx-auto leading-relaxed"
+              className="mt-2 text-lg md:text-xl text-gray-700 max-w-md mx-auto leading-relaxed"
             >
               نقدم منتجات DXN الأصلية لتعزيز صحتك بأسلوب طبيعي ومتوازن
             </motion.p>
@@ -451,21 +456,60 @@ export default function Home() {
     <MessageCircle className="w-5 h-5" />
   </a>
 
-  <a
-    href="#"
-    className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
-    aria-label="Instagram"
+ {/* Instagram */}
+<a
+  href="https://www.instagram.com/elmanaraticaret?igsh=eXdlbDFtbHl0NHpz"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+  aria-label="Instagram"
+>
+  <Instagram className="w-5 h-5" />
+</a>
+
+{/* TikTok */}
+<a
+  href="https://vt.tiktok.com/ZSDgnue22/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+  aria-label="TikTok"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 448 512"
+    className="w-5 h-5 fill-current"
   >
-    <Instagram className="w-5 h-5" />
-  </a>
+    <path d="M448,209.9a210,210,0,0,1-122.2-39.2V370.6a141.4,141.4,0,1,1-99.3-134v84.7a58.2,58.2,0,1,0,41.1,55.3V0h80.3A129.5,129.5,0,0,0,448,128.6Z"/>
+  </svg>
+</a>
 
   <a
-    href="#"
+    href="https://www.facebook.com/share/1A2TVecGzj/"
     className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
     aria-label="Facebook"
   >
     <Facebook className="w-5 h-5" />
   </a>
+
+{/* YouTube */}
+<a
+  href="https://youtube.com/@elmanaraticaretmuhammedelhusey?si=cNxNLxpxq_P9moyd"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+  aria-label="YouTube"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 576 512"
+    className="w-5 h-5 fill-current"
+  >
+    <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.4-48.6C465.4 64 288 64 288 64s-177.4 0-213.3 11.5c-23.6 6.3-42.1 24.9-48.4 48.6C16 160.1 16 256 16 256s0 95.9 10.3 131.9c6.3 23.7 24.8 42.3 48.4 48.6C110.6 448 288 448 288 448s177.4 0 213.3-11.5c23.6-6.3 42.1-24.9 48.4-48.6C560 351.9 560 256 560 256s0-95.9-10.3-131.9zM232 336V176l142 80-142 80z"/>
+  </svg>
+</a>
+
+
 </div>
     {/* Alt Satır */}
     <div className="mt-3 text-xs text-gray-300 text-center">
