@@ -7,7 +7,7 @@ import Particles from "react-tsparticles";
 import { useState, useEffect,useRef } from "react";
 import ContactForm from "./components/ContactForm";
 import CategoryShowcase from "./components/CategoryShowcase";
-
+import JoinUs from "./components/JoinUs";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -76,7 +76,7 @@ const form = useRef();
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <Image src="/LogoSon.png" alt="المنارة" width={400} height={100} />
+              <Image src="/ELManara.png" alt="المنارة" width={200} height={100} />
             </motion.div>
 
             {/* Title Typing Effect */}
@@ -394,7 +394,7 @@ const form = useRef();
 </section>
 
 
-<section id="about-contact" className="relative py-20 px-6 bg-gradient-to-b from-white via-white to-green-50">
+<section id="about-contact" className="relative  px-6 bg-gradient-to-b from-white via-white to-green-50">
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     
     {/* HAKKIMIZDA */}
@@ -425,6 +425,8 @@ const form = useRef();
     {/* İLETİŞİM FORMU */}
     <ContactForm />
   </div>
+  
+      <JoinUs />
 </section>
 
 
@@ -514,6 +516,7 @@ const form = useRef();
       © 2025 المنارة للتجارة - جميع الحقوق محفوظة
     </div>
   </div>
+  
 </footer>
 
 
