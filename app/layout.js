@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 // ✅ Metadata (title, description, favicon vs.)
 export const metadata = {
   title: "EL MANARA TICARET | DXN",
-  description: "منتجات DXN الطبيعية والصحية للعناية بالجسم والبشرة.",
+  description: "مع DXN، تمتع بمنتجات طبيعية متنوعة: من المكملات والمشروبات إلى العناية بالجمال. صحتك تبدأ هنا مع المنارة للتجارة.",
   icons: {
     icon: "/ELManaraLogo.png",
     shortcut: "/ELManaraLogo.png",
