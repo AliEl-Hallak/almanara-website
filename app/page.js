@@ -1,17 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronDown, MessageCircle, Mail,Instagram, Facebook } from "lucide-react";
+import { Building2, MessageCircle, Mail,Instagram, Facebook } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import Particles from "react-tsparticles";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect,useRef } from "react";
+import ContactForm from "./components/ContactForm";
+import CategoryShowcase from "./components/CategoryShowcase";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 export default function Home() {
+const form = useRef();
+
    const [showScroll, setShowScroll] = useState(true);
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function Home() {
 
 {/* Desktop için tek büyük arka plan */}
 <Image
-  src="/Logo.png"
+  src="/ArkaResim.png"
   alt="خلفية طبيعية"
   fill
   className="object-cover opacity-20 hidden md:block"
@@ -73,7 +76,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <Image src="/L2.png" alt="المنارة" width={400} height={200} />
+              <Image src="/LogoSon.png" alt="المنارة" width={400} height={100} />
             </motion.div>
 
             {/* Title Typing Effect */}
@@ -114,54 +117,9 @@ export default function Home() {
           </div>
 
           {/* RIGHT SIDE: Product Slider */}
-          <div className="mt-[-16px] md:mt-0 w-full p-4 md:p-6 flex items-center justify-center">
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 2500 }}
-              loop={true}
-              slidesPerView={1}
-              className="w-full max-w-md"
-            >
-              {[
-                {
-                  name: "قهوة لينجزي السوداء",
-                  desc: "قهوة طبيعية مدعمة بفطر الريشي",
-                  img: "/1.png",
-                },
-                {
-                  name: "مكمل غذائي ريشي",
-                  desc: "مستخلص فطر جانوديرما لتعزيز المناعة",
-                  img: "/2.png",
-                },
-                {
-                  name: "شامبو جانوديرم",
-                  desc: "شامبو طبيعي للعناية بالشعر",
-                  img: "/1.png",
-                },
-              ].map((product, idx) => (
-                <SwiperSlide key={idx}>
-                  <motion.div
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.4 }}
-                    className="flex flex-col items-center text-center cursor-pointer"
-                    onClick={() => (window.location.href = "/#products")}
-                  >
-                    <Image
-                      src={product.img}
-                      alt={product.name}
-                      width={250}
-                      height={250}
-                      className="mx-auto drop-shadow-xl transition-transform"
-                    />
-                    <h3 className="text-2xl font-bold text-green-800">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 mt-1">{product.desc}</p>
-                  </motion.div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+<section id="categories">
+  <CategoryShowcase />
+</section>
         </div>
 
    {/* Scroll Down Indicator */}
@@ -213,16 +171,96 @@ export default function Home() {
         className="w-full max-w-5xl"
       >
         {[
-          { name: "قهوة لينجزي السوداء", desc: "قهوة طبيعية مدعمة بفطر الريشي", img: "/1.png" },
-          { name: "مكمل غذائي ريشي", desc: "مستخلص فطر جانوديرما لتعزيز المناعة", img: "/2.png" },
-          { name: "شامبو جانوديرم", desc: "شامبو طبيعي للعناية بالشعر", img: "/1.png" },
-          { name: "معجون أسنان جانوديرم", desc: "معجون طبيعي لحماية اللثة والأسنان", img: "/2.png" },
-          { name: "مشروم باودر", desc: "مسحوق الفطر للطبخ والمشروبات", img: "/1.png" },
-          { name: "سبيرولينا", desc: "غذاء طبيعي غني بالبروتينات", img: "/2.png" },
-          { name: "زيت جانو", desc: "زيت طبيعي لصحة أفضل", img: "/1.png" },
-          { name: "كريم البشرة", desc: "ترطيب وحماية للبشرة", img: "/2.png" },
-          { name: "شاي لينجزي", desc: "شاي طبيعي مهدئ", img: "/1.png" },
-          { name: "كاكاو DXN", desc: "مشروب كاكاو صحي للطاقة", img: "/2.png" },
+     { 
+      name: "Myco Veggie", 
+      img: "/products/mycoveggie.png",
+      desc: "خليط من الخضروات والفطر والأعشاب لدعم الهضم وصحة الجسم."
+    },
+    { 
+      name: "Ganozhi Shampoo", 
+      img: "/products/PC004_Shampoo.png",
+      desc: "شامبو لطيف بخلاصة الجانوديرما للعناية بالشعر وفروة الرأس."
+    },
+    { 
+      name: "Ganozhi Toothpaste", 
+      img: "/products/PC006_Toothpaste.png",
+      desc: "معجون أسنان طبيعي يحتوي على الجانوديرما لحماية اللثة والأسنان."
+    },
+    { 
+      name: "Tea Tree Cream", 
+      img: "/products/PC014-TeaTree.png",
+      desc: "كريم بزيت شجرة الشاي لتهدئة البشرة وحمايتها."
+    },
+    { 
+      name: "Baby Oil", 
+      img: "/products/SC012_BabyOil.png",
+      desc: "زيت لطيف ومرطب لبشرة الأطفال الحساسة."
+    },
+    { 
+      name: "Ganozhi Lipstick", 
+      img: "/products/SC016_Lipstick_PearlyPink.png",
+      desc: "أحمر شفاه طبيعي مرطب بخلاصة الجانوديرما."
+    },
+    { 
+      name: "Aloe V Lotion", 
+      img: "/products/SC024_H&B-Lotion.png",
+      desc: "لوشن مرطب لليدين والجسم بخلاصة الألوفيرا."
+    },
+    { 
+      name: "Tea Latte", 
+      img: "/products/tealatte.png",
+      desc: "شاي لاتيه ممزوج مع خلاصة الجانوديرما لانتعاش طبيعي."
+    },
+    { 
+      name: "Coconut Oil", 
+      img: "/products/coconut-oil-dxn.png",
+      desc: "زيت جوز الهند العضوي البكر، متعدد الاستخدامات للصحة والجمال."
+    },
+    { 
+      name: "Roselle Drink", 
+      img: "/products/FB005_Roselle_285ml.png",
+      desc: "مشروب نباتي من الكركديه غني بمضادات الأكسدة."
+    },
+    { 
+      name: "Morinzhi Juice", 
+      img: "/products/FB007_Morinzhi_285ml.png",
+      desc: "عصير المورينزي الطبيعي لدعم الطاقة والمناعة."
+    },
+    { 
+      name: "Lemonzhi", 
+      img: "/products/FB155_Lemonzhi.png",
+      desc: "شاي ليمون ممزوج بخلاصة الجانوديرما لانتعاش يومي."
+    },
+    { 
+      name: "Zhi Honey", 
+      img: "/products/FB328_Zhi_Honey.png",
+      desc: "عسل طبيعي نقي مدعم بخلاصة الجانوديرما."
+    },
+    { 
+      name: "Spirulina", 
+      img: "/products/HF031_Spirulina_120s.png",
+      desc: "طحالب سبيرولينا الغنية بالبروتينات والمعادن."
+    },
+    { 
+      name: "Reishi Mushroom", 
+      img: "/products/HF041_ReishiMushroomPowder_70g.png",
+      desc: "فطر الريشي الشهير بدعم المناعة وصحة الجسم."
+    },
+    { 
+      name: "Pineapple Jam", 
+      img: "/products/jam.png",
+      desc: "مربى الأناناس مع الجانوديرما، لذيذ وصحي."
+    },
+    { 
+      name: "Kiwi Drink", 
+      img: "/products/kiwi.png",
+      desc: "شراب الكيوي الطبيعي المنعش والغني بالفيتامينات."
+    },
+    { 
+      name: "Lingzhi Coffee 3in1", 
+      img: "/products/Lingzhi_coffee_3in1ground-front.png",
+      desc: "قهوة لينجزي 3 في 1 مع خلاصة الجانوديرما لبدء يومك بطاقة."
+    },
         ].map((product, idx) => (
           <SwiperSlide key={idx}>
             {({ isActive }) => (
@@ -328,11 +366,13 @@ export default function Home() {
         title: "طاقة وصحة",
         desc: "تمنحك توازن طبيعي وحيوية في حياتك اليومية.",
       },
-      {
-        icon: "💬",
-        title: "خدمة عملاء",
-        desc: "دعم سريع عبر الواتساب لمساعدتك دائماً.",
-      },
+{
+  icon: "📊",
+  title: "نتائج مثبتة",
+  desc: "آلاف العملاء حول العالم شهدوا بفوائد منتجاتنا الطبيعية."
+}
+
+
     ].map((item, idx) => (
       <motion.div
         key={idx}
@@ -354,81 +394,39 @@ export default function Home() {
 </section>
 
 
-{/* ABOUT & CONTACT SECTION */}
-<section
-  id="about-contact"
-  className="relative py-20 px-6 bg-gradient-to-b from-white via-white to-green-50"
->
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 ">
+<section id="about-contact" className="relative py-20 px-6 bg-gradient-to-b from-white via-white to-green-50">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     
     {/* HAKKIMIZDA */}
-<motion.div
-  initial={{ opacity: 0, x: 50 }}   // sağdan başlar
-  whileInView={{ opacity: 1, x: 0 }} 
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="bg-white rounded-xl shadow-lg p-8 min-h-[380px]"
->
-      <h2 className="text-2xl font-bold text-green-700 mb-4 flex items-center justify-center gap-2">
-        🌿 من نحن؟
-      </h2>
-      <p className="text-gray-600 leading-relaxed text-center text-base">
-        نحن في <span className="font-semibold text-green-700">المنارة للتجارة</span> 
-        نؤمن أن <span className="font-semibold">الصحة تبدأ من الطبيعة</span>.  
-        اخترنا تقديم منتجات <span className="font-bold">DXN</span> الطبيعية 
-        والمعتمدة عالمياً لحياة صحية ومتوازنة.
-      </p>
-      <p className="text-gray-600 mt-4 leading-relaxed text-center text-base">
-        هدفنا نشر ثقافة العيش الصحي وبناء ثقة حقيقية 
-        مع عملائنا عبر منتجات طبيعية عالية الجودة.
-      </p>
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-white rounded-xl shadow-lg p-8 min-h-[380px]"
+    >
+<h2 className="text-2xl font-bold text-green-700 mb-6 flex items-center justify-center gap-2">
+  <Building2 className="w-7 h-7 text-green-700" /> من نحن
+</h2>
+
+
+<p className="text-gray-600 leading-relaxed text-center text-base">
+  في <span className="font-bold">المنارة </span> نضع صحتك وراحتك في المقدمة.  
+  نعمل على تقديم <span className="font-bold">منتجات DXN الطبيعية</span> المعتمدة عالميًا،  
+  لنمنحك أسلوب حياة متوازن وصحي قائم على الطبيعة والجودة.
+</p>
+
+<p className="text-gray-600 mt-4 leading-relaxed text-center text-base">
+  رسالتنا هي نشر ثقافة العيش الصحي وبناء ثقة دائمة مع عملائنا  
+  من خلال منتجات طبيعية عالية الجودة وخدمة مميزة. 🌿
+</p>
+
     </motion.div>
 
     {/* İLETİŞİM FORMU */}
-<motion.div
-  initial={{ opacity: 0, x: -50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="bg-white rounded-xl shadow-lg p-8 min-h-[380px]"
->
-      <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">
-        ✉️ تواصل معنا
-      </h2>
-
-      <form className="space-y-4">
-        <motion.input
-          whileFocus={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
-          type="text"
-          placeholder="الاسم الكامل"
-          className="w-full rounded-lg px-4 py-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
-        />
-        <motion.input
-          whileFocus={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
-          type="email"
-          placeholder="البريد الإلكتروني"
-          className="w-full rounded-lg px-4 py-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
-        />
-        <motion.textarea
-          whileFocus={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
-          rows="3"
-          placeholder="رسالتك..."
-          className="w-full rounded-lg px-4 py-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
-        ></motion.textarea>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          type="submit"
-          className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition"
-        >
-          إرسال الرسالة 🚀
-        </motion.button>
-      </form>
-    </motion.div>
+    <ContactForm />
   </div>
 </section>
+
 
 {/* FOOTER */}
 {/* FOOTER (Modern & İnce) */}
