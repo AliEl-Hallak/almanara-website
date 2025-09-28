@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Building2, MessageCircle, Mail,Instagram, Facebook } from "lucide-react";
+import { Sparkles, Search,Leaf, ShieldCheck, Zap, BarChart, Flower2, Gem, Star, Heart,Building2, MessageCircle, Mail,Instagram, Facebook } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import Particles from "react-tsparticles";
 import { useState, useEffect,useRef } from "react";
@@ -11,6 +11,7 @@ import JoinUs from "./components/JoinUs";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
 const form = useRef();
@@ -106,14 +107,15 @@ const form = useRef();
             </motion.p>
 
             {/* CTA Button */}
-            <motion.a
-              href="#products"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-2 md:mt-6 inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base md:text-lg"
-            >
-              🌿 اكتشف منتجاتنا
-            </motion.a>
+
+<motion.a
+  href="#products"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="mt-2 md:mt-6 inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base md:text-lg"
+>
+  <Search className="w-5 h-5" /> اكتشف منتجاتنا
+</motion.a>
           </div>
 
           {/* RIGHT SIDE: Product Slider */}
@@ -131,14 +133,16 @@ const form = useRef();
 <section id="products" className="bg-white py-24">
   <div className="max-w-6xl mx-auto px-6 text-center">
     {/* Stylish Title */}
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-400"
-    >
-      ✨ منتجاتنا الطبيعية ✨
-    </motion.h2>
+  <motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="flex items-center justify-center gap-3 text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-400"
+>
+  <Sparkles className="w-10 h-10 text-green-600" /> 
+  منتجاتنا الطبيعية
+  <Sparkles className="w-10 h-10 text-green-600" /> 
+</motion.h2>
     <motion.div
       initial={{ scaleX: 0 }}
       whileInView={{ scaleX: 1 }}
@@ -303,20 +307,21 @@ const form = useRef();
   className="mt-12 text-center"
 >
   <p className="text-green-700 font-semibold text-lg">
-    🌿 اكتشف منتجاتنا الطبيعية الآن وابدأ رحلتك نحو حياة صحية 🌿
+اكتشف منتجاتنا الطبيعية الآن وابدأ رحلتك نحو حياة صحية
   </p>
   <p className="text-gray-600 mt-2">
     لمعرفة المزيد من المنتجات تواصل معنا عبر واتساب
   </p>
 
-  <a
-    href="https://wa.me/905360211145"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-4 inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base"
-  >
-    📲 تواصل عبر واتساب
-  </a>
+<a
+  href="https://wa.me/905360211145"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base"
+>
+  <FaWhatsapp className="w-5 h-5" />
+  تواصل عبر واتساب
+</a>
 </motion.div>
 
   </div>
@@ -351,26 +356,26 @@ const form = useRef();
   {/* Kartlar */}
   <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl ">
     {[
-      {
-        icon: "🌱",
-        title: "طبيعية 100%",
-        desc: "منتجات عضوية مستخلصة من الطبيعة للحفاظ على صحتك.",
-      },
-      {
-        icon: "🛡️",
-        title: "جودة عالية",
-        desc: "مضمونة ومعتمدة عالمياً بمعايير الجودة.",
-      },
-      {
-        icon: "⚡",
-        title: "طاقة وصحة",
-        desc: "تمنحك توازن طبيعي وحيوية في حياتك اليومية.",
-      },
-{
-  icon: "📊",
-  title: "نتائج مثبتة",
-  desc: "آلاف العملاء حول العالم شهدوا بفوائد منتجاتنا الطبيعية."
-}
+   {
+    icon: <Leaf className="w-10 h-10 text-green-600" />,
+    title: "طبيعية 100%",
+    desc: "منتجات عضوية مستخلصة من الطبيعة للحفاظ على صحتك.",
+  },
+  {
+    icon: <ShieldCheck className="w-10 h-10 text-green-600" />,
+    title: "جودة عالية",
+    desc: "مضمونة ومعتمدة عالمياً بمعايير الجودة.",
+  },
+  {
+    icon: <Zap className="w-10 h-10 text-green-600" />,
+    title: "طاقة وصحة",
+    desc: "تمنحك توازن طبيعي وحيوية في حياتك اليومية.",
+  },
+  {
+    icon: <BarChart className="w-10 h-10 text-green-600" />,
+    title: "نتائج مثبتة",
+    desc: "آلاف العملاء حول العالم شهدوا بفوائد منتجاتنا الطبيعية.",
+  }
 
 
     ].map((item, idx) => (
@@ -418,7 +423,7 @@ const form = useRef();
 
 <p className="text-gray-600 mt-4 leading-relaxed text-center text-base">
   رسالتنا هي نشر ثقافة العيش الصحي وبناء ثقة دائمة مع عملائنا  
-  من خلال منتجات طبيعية عالية الجودة وخدمة مميزة. 🌿
+  من خلال منتجات طبيعية عالية الجودة وخدمة مميزة
 </p>
 
     </motion.div>

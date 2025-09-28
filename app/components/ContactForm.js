@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { Mail,} from "lucide-react";
+import { Mail,Send} from "lucide-react";
 
 export default function ContactForm() {
   const form = useRef();
@@ -174,14 +174,15 @@ setErrors((prev) => ({
         </div>
 
         {/* Gönder Butonu */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          type="submit"
-          className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition"
-        >
-          إرسال الرسالة 🚀
-        </motion.button>
+   <motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  type="submit"
+  className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition flex items-center justify-center gap-2"
+>
+  <Send className="w-5 h-5" />
+  إرسال الرسالة
+</motion.button>
 
         {success && (
           <p className="mt-4 text-green-600 font-semibold text-center">

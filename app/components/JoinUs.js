@@ -16,28 +16,19 @@ export default function JoinUs() {
         >
           {/* Başlık */}
           <h2 className="text-3xl md:text-4xl font-extrabold text-green-700">
-            🚀 هل ترغب بالانضمام إلينا؟
+             هل ترغب بالانضمام إلينا؟
           </h2>
 
           {/* Açıklama */}
           <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
             مع <span className="font-bold text-green-700">المنارة </span> 
             ستتعلم كيف تبني عملك التجاري وتحقق دخلاً إضافياً مع منتجات DXN الطبيعية.  
-            اختر الطريقة الأنسب لك للانضمام الآن 🌿
+            اختر الطريقة الأنسب لك للانضمام الآن
           </p>
 
           {/* Butonlar */}
           <div className="flex flex-col md:flex-row gap-4 mt-4">
-            {/* WhatsApp Butonu */}
-            <a
-              href="https://wa.me/905360211145"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-green-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition text-lg font-semibold"
-            >
-              <FaWhatsapp className="w-6 h-6" />
-              تواصل عبر واتساب
-            </a>
+         
 
             {/* Form Butonu */}
             <Link
@@ -47,6 +38,16 @@ export default function JoinUs() {
               <FaUserEdit className="w-6 h-6" />
               املأ استمارة الانضمام
             </Link>
+               {/* WhatsApp Butonu */}
+            <a
+              href="https://wa.me/905360211145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-green-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition text-lg font-semibold"
+            >
+              <FaWhatsapp className="w-6 h-6" />
+              تواصل عبر واتساب
+            </a>
           </div>
         </motion.div>
       </div>

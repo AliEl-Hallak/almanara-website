@@ -29,7 +29,7 @@ export default function JoinUsPage() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl font-extrabold text-green-800 text-center drop-shadow-lg"
         >
-          🌿 انضم إلى عائلة{" "}
+          انضم إلى عائلة{" "}
           <span className="text-green-600">المنارة للتجارة</span>
         </motion.h1>
 
@@ -39,8 +39,7 @@ export default function JoinUsPage() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-4 text-gray-700 text-lg md:text-xl text-center max-w-2xl leading-relaxed"
         >
-          اكتشف معنا فرص النجاح والتسويق مع منتجات DXN الصحية
-          🌱، وكن جزءًا من فريق يسعى نحو حياة طبيعية وصحية أفضل.
+          اكتشف معنا فرص النجاح والتسويق مع منتجات DXN الصحية، وكن جزءًا من فريق يسعى نحو حياة طبيعية وصحية أفضل.
         </motion.p>
 
         {/* Form */}
