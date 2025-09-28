@@ -325,7 +325,7 @@ const form = useRef();
 {/* WHY US SECTION */}
 <section
   id="why-us"
-  className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b  py-20 px-6"
+  className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b  py-5 px-6"
 >
   {/* Başlık */}
 <motion.h2
@@ -394,7 +394,8 @@ const form = useRef();
 </section>
 
 
-<section id="about-contact" className="relative  px-6 bg-gradient-to-b from-white via-white to-green-50">
+<section id="about-contact" className="relative py-10 px-6 bg-gradient-to-b from-white via-white to-green-50">
+   
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     
     {/* HAKKIMIZDA */}
@@ -425,8 +426,7 @@ const form = useRef();
     {/* İLETİŞİM FORMU */}
     <ContactForm />
   </div>
-  
-      <JoinUs />
+   <JoinUs />
 </section>
 
 
