@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { UserPlus,Send } from "lucide-react";
+import { UserPlus, Send } from "lucide-react";
 
 export default function JoinUsForm() {
   const form = useRef();
@@ -19,12 +19,12 @@ export default function JoinUsForm() {
   const isAdult = (dob) => {
     const birthDate = new Date(dob);
     const today = new Date();
-    const age = today.getFullYear() - birthDate.getFullYear();
+    let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
     const dayDiff = today.getDate() - birthDate.getDate();
 
     if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-      return age - 1 >= 18;
+      age--;
     }
     return age >= 18;
   };
@@ -144,7 +144,13 @@ export default function JoinUsForm() {
         <Input name="phone" placeholder="رقم الهاتف" dir="ltr" error={errors.phone} onChange={handleChange} />
 
         {/* Doğum tarihi */}
-        <Input name="dob" type="date" placeholder="تاريخ الميلاد" error={errors.dob} onChange={handleChange} />
+        <Input
+          name="dob"
+          type="date"
+          placeholder="تاريخ الميلاد"
+          error={errors.dob}
+          onChange={handleChange}
+        />
 
         <Input name="nationality" placeholder="الجنسيّة" error={errors.nationality} onChange={handleChange} />
 
@@ -159,7 +165,7 @@ export default function JoinUsForm() {
             onChange={handleChange}
             className={`w-full rounded-lg px-3 py-2 border ${
               errors.address ? "border-red-400" : errors.address === "" ? "border-gray-300" : "border-green-400"
-            } text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm`}
+            } bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm`}
           ></motion.textarea>
           {errors.address && <p className="mt-1 text-xs text-red-600">{errors.address}</p>}
         </div>
@@ -170,8 +176,8 @@ export default function JoinUsForm() {
           type="submit"
           className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition flex items-center justify-center gap-2"
         >
-        <Send className="w-5 h-5" />
-        إرسال الطلب 
+          <Send className="w-5 h-5" />
+          إرسال الطلب
         </motion.button>
         {success && (
           <p className="mt-3 text-green-600 font-semibold text-center text-sm">
@@ -197,7 +203,7 @@ function Input({ name, type = "text", placeholder, error, onChange, dir }) {
         onChange={onChange}
         className={`w-full rounded-lg px-3 py-2 border ${
           error ? "border-red-400" : error === "" ? "border-gray-300" : "border-green-400"
-        } text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm`}
+        } bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm appearance-none`}
       />
       {error && <p className="mt-1 text-xs text-red-600">{error}</p>}
     </div>
