@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { UserPlus, Send } from "lucide-react";
+import { IMaskInput } from "react-imask";
 
 export default function JoinUsForm() {
   const form = useRef();
@@ -140,17 +141,24 @@ export default function JoinUsForm() {
 
       <form ref={form} onSubmit={sendEmail} className="space-y-3">
         <Input name="name" placeholder="الاسم الكامل" error={errors.name} onChange={handleChange} />
-        <Input name="email" placeholder="البريد الإلكتروني" dir="ltr" error={errors.email} onChange={handleChange} />
-        <Input name="phone" placeholder="رقم الهاتف" dir="ltr" error={errors.phone} onChange={handleChange} />
+        <Input name="email" placeholder="البريد الإلكتروني"  error={errors.email} onChange={handleChange} />
+        <Input name="phone" placeholder="رقم الهاتف"  error={errors.phone} onChange={handleChange} />
 
         {/* Doğum tarihi */}
-        <Input
-          name="dob"
-          type="date"
-          placeholder="تاريخ الميلاد"
-          error={errors.dob}
-          onChange={handleChange}
-        />
+    {/* Doğum tarihi - react-imask */}
+<div>
+  <IMaskInput
+    mask="0000-00-00"
+  placeholder="تاريخ الميلاد (YYYY-MM-DD)"
+    name="dob"
+    onAccept={(value) => handleChange({ target: { name: "dob", value } })}
+    className={`w-full rounded-lg px-3 py-2 border ${
+      errors.dob ? "border-red-400" : errors.dob === "" ? "border-gray-300" : "border-green-400"
+    } bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm`}
+  />
+  {errors.dob && <p className="mt-1 text-xs text-red-600">{errors.dob}</p>}
+</div>
+
 
         <Input name="nationality" placeholder="الجنسيّة" error={errors.nationality} onChange={handleChange} />
 
