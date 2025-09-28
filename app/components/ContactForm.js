@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { Mail,Send} from "lucide-react";
+import { Mail, Send } from "lucide-react";
 
 export default function ContactForm() {
   const form = useRef();
@@ -33,11 +33,10 @@ export default function ContactForm() {
       else if (value.trim().length < 5) message = "الرسالة قصيرة جداً";
     }
 
-setErrors((prev) => ({
-  ...prev,
-  [name]: message,   // input’un kendi name’i (name, email, message) direkt alınır
-}));
-
+    setErrors((prev) => ({
+      ...prev,
+      [name]: message,
+    }));
   };
 
   // Submit işlemi
@@ -45,7 +44,7 @@ setErrors((prev) => ({
     e.preventDefault();
 
     const formEl = form.current;
-    const name = formEl.name .value.trim();
+    const name = formEl.name.value.trim();
     const email = formEl.email.value.trim();
     const message = formEl.message.value.trim();
 
@@ -97,13 +96,12 @@ setErrors((prev) => ({
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="bg-white rounded-xl shadow-lg p-8 min-h-[380px]"
     >
-<h2 className="flex items-center justify-center gap-3 text-2xl font-extrabold text-green-700 mb-6">
-  <span className="p-2 ">
-    <Mail className="w-6 h-6" />
-  </span>
-  <span>تواصل معنا</span>
-</h2>
-
+      <h2 className="flex items-center justify-center gap-3 text-2xl font-extrabold text-green-700 mb-6">
+        <span className="p-2 ">
+          <Mail className="w-6 h-6" />
+        </span>
+        <span>تواصل معنا</span>
+      </h2>
 
       <form ref={form} onSubmit={sendEmail} className="space-y-4">
         {/* İsim */}
@@ -121,7 +119,7 @@ setErrors((prev) => ({
                 : errors.name === ""
                 ? "border-gray-300"
                 : "border-green-400"
-            } text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400`}
+            } bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400`}
           />
           {errors.name && (
             <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -144,7 +142,7 @@ setErrors((prev) => ({
                 : errors.email === ""
                 ? "border-gray-300"
                 : "border-green-400"
-            } text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400`}
+            } bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400`}
           />
           {errors.email && (
             <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -166,7 +164,7 @@ setErrors((prev) => ({
                 : errors.message === ""
                 ? "border-gray-300"
                 : "border-green-400"
-            } text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400`}
+            } bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400`}
           ></motion.textarea>
           {errors.message && (
             <p className="mt-1 text-sm text-red-600">{errors.message}</p>
@@ -174,15 +172,15 @@ setErrors((prev) => ({
         </div>
 
         {/* Gönder Butonu */}
-   <motion.button
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  type="submit"
-  className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition flex items-center justify-center gap-2"
->
-  <Send className="w-5 h-5" />
-  إرسال الرسالة
-</motion.button>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          type="submit"
+          className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition flex items-center justify-center gap-2"
+        >
+          <Send className="w-5 h-5" />
+          إرسال الرسالة
+        </motion.button>
 
         {success && (
           <p className="mt-4 text-green-600 font-semibold text-center">
