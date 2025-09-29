@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Sparkles, Search,Leaf, ShieldCheck, Zap, BarChart, Flower2, Gem, Star, Heart,Building2, MessageCircle, Mail,Instagram, Facebook } from "lucide-react";
+import { Sparkles, Search,Leaf, ShieldCheck, Zap, BarChart, Laptop, Gem, Star, Heart,Building2, MessageCircle, Mail,Instagram, Facebook } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import Particles from "react-tsparticles";
 import { useState, useEffect,useRef } from "react";
@@ -399,7 +399,7 @@ const form = useRef();
 </section>
 
 
-<section id="about-contact" className="relative py-10 px-6 bg-gradient-to-b from-white via-white to-green-50">
+<section id="about-contact" className="relative py-10 px-6 bg-gradient-to-b from-white/0 via-green-100/30 to-green-200/95">
    
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     
@@ -436,10 +436,9 @@ const form = useRef();
 
 
 {/* FOOTER */}
-{/* FOOTER (Modern & İnce) */}
 <footer className="bg-gradient-to-r from-green-700 to-green-900 text-white py-6 ">
   <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-3">
-    
+
     {/* Menü */}
     <ul className="flex gap-6 text-sm font-medium">
       <li><a href="#hero" className="hover:text-green-300 transition">الرئيسية</a></li>
@@ -449,79 +448,88 @@ const form = useRef();
     </ul>
 
     {/* Sosyal Medya */}
-{/* Sosyal Medya */}
-<div className="flex gap-4 mt-2">
+    <div className="flex gap-4 mt-2">
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/905360211145"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle className="w-5 h-5" />
+      </a>
+
+      {/* Instagram */}
+      <a
+        href="https://www.instagram.com/elmanaraticaret?igsh=eXdlbDFtbHl0NHpz"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+        aria-label="Instagram"
+      >
+        <Instagram className="w-5 h-5" />
+      </a>
+
+      {/* TikTok */}
+      <a
+        href="https://vt.tiktok.com/ZSDgnue22/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+        aria-label="TikTok"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-5 h-5 fill-current">
+          <path d="M448,209.9a210,210,0,0,1-122.2-39.2V370.6a141.4,141.4,0,1,1-99.3-134v84.7a58.2,58.2,0,1,0,41.1,55.3V0h80.3A129.5,129.5,0,0,0,448,128.6Z"/>
+        </svg>
+      </a>
+
+      {/* Facebook */}
+      <a
+        href="https://www.facebook.com/share/1A2TVecGzj/"
+        className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+        aria-label="Facebook"
+      >
+        <Facebook className="w-5 h-5" />
+      </a>
+
+      {/* YouTube */}
+      <a
+        href="https://youtube.com/@elmanaraticaretmuhammedelhusey?si=cNxNLxpxq_P9moyd"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
+        aria-label="YouTube"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" className="w-5 h-5 fill-current">
+          <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.4-48.6C465.4 64 288 64 288 64s-177.4 0-213.3 11.5c-23.6 6.3-42.1 24.9-48.4 48.6C16 160.1 16 256 16 256s0 95.9 10.3 131.9c6.3 23.7 24.8 42.3 48.4 48.6C110.6 448 288 448 288 448s177.4 0 213.3-11.5c23.6-6.3 42.1-24.9 48.4-48.6C560 351.9 560 256 560 256s0-95.9-10.3-131.9zM232 336V176l142 80-142 80z"/>
+        </svg>
+      </a>
+    </div>
+
+    {/* Geliştirici ile İletişim Butonu */}
+   <div className="mt-5">
   <a
-    href="https://wa.me/905360211145"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
-    aria-label="WhatsApp"
+    href="mailto:elmanara@almanaraticaret.com"
+    className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/90 text-green-700 font-medium rounded-full shadow-md hover:bg-white transition transform hover:scale-105 hover:shadow-lg duration-300"
   >
-    <MessageCircle className="w-5 h-5" />
+    {/* Sol ikon */}
+    <Laptop className="w-5 h-5" />
+
+    {/* Yazı */}
+    <span className="text-sm">تواصل مباشر مع المطور</span>
+
+    {/* Sağ ikon */}
+    <FaWhatsapp className="w-5 h-5" />
   </a>
-
- {/* Instagram */}
-<a
-  href="https://www.instagram.com/elmanaraticaret?igsh=eXdlbDFtbHl0NHpz"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
-  aria-label="Instagram"
->
-  <Instagram className="w-5 h-5" />
-</a>
-
-{/* TikTok */}
-<a
-  href="https://vt.tiktok.com/ZSDgnue22/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
-  aria-label="TikTok"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 448 512"
-    className="w-5 h-5 fill-current"
-  >
-    <path d="M448,209.9a210,210,0,0,1-122.2-39.2V370.6a141.4,141.4,0,1,1-99.3-134v84.7a58.2,58.2,0,1,0,41.1,55.3V0h80.3A129.5,129.5,0,0,0,448,128.6Z"/>
-  </svg>
-</a>
-
-  <a
-    href="https://www.facebook.com/share/1A2TVecGzj/"
-    className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
-    aria-label="Facebook"
-  >
-    <Facebook className="w-5 h-5" />
-  </a>
-
-{/* YouTube */}
-<a
-  href="https://youtube.com/@elmanaraticaretmuhammedelhusey?si=cNxNLxpxq_P9moyd"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-white/90 text-green-700 p-2 rounded-full hover:bg-white transition transform hover:scale-110"
-  aria-label="YouTube"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 576 512"
-    className="w-5 h-5 fill-current"
-  >
-    <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.4-48.6C465.4 64 288 64 288 64s-177.4 0-213.3 11.5c-23.6 6.3-42.1 24.9-48.4 48.6C16 160.1 16 256 16 256s0 95.9 10.3 131.9c6.3 23.7 24.8 42.3 48.4 48.6C110.6 448 288 448 288 448s177.4 0 213.3-11.5c23.6-6.3 42.1-24.9 48.4-48.6C560 351.9 560 256 560 256s0-95.9-10.3-131.9zM232 336V176l142 80-142 80z"/>
-  </svg>
-</a>
-
-
 </div>
+
+
     {/* Alt Satır */}
     <div className="mt-3 text-xs text-gray-300 text-center">
       © 2025 المنارة للتجارة - جميع الحقوق محفوظة
     </div>
   </div>
-  
 </footer>
 
 
