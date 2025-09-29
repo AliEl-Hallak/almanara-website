@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 
 export default function CategoryShowcase() {
   const categories = [
-    { img: "/Categorey_Images/1.png" },
-    { img: "/Categorey_Images/2.png" },
-    { img: "/Categorey_Images/3.png" },
-    { img: "/Categorey_Images/4.png" },
-    { img: "/Categorey_Images/5.png" },
-    { img: "/Categorey_Images/6.png" },
+    { img: "/Categorey_Images/01.png" },
+    { img: "/Categorey_Images/02.png" },
+    { img: "/Categorey_Images/03.png" },
+    { img: "/Categorey_Images/04.png" },
+    { img: "/Categorey_Images/05.png" },
+    { img: "/Categorey_Images/06.png" },
   ];
 
   const [index, setIndex] = useState(0);
