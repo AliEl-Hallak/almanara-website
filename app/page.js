@@ -509,10 +509,11 @@ const form = useRef();
 
     {/* Geliştirici ile İletişim Butonu */}
    <div className="mt-5">
-  <a
-    href="mailto:elmanara@almanaraticaret.com"
-    className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/90 text-green-700 font-medium rounded-full shadow-md hover:bg-white transition transform hover:scale-105 hover:shadow-lg duration-300"
-  >
+      <a
+      href="https://wa.me/905314849283"
+      target="_blank"
+      className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/90 text-green-700 font-medium rounded-full shadow-md hover:bg-white transition transform hover:scale-105 hover:shadow-lg duration-300"
+      >
     {/* Sol ikon */}
     <Laptop className="w-5 h-5" />
 
