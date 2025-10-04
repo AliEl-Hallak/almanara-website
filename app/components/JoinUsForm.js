@@ -80,6 +80,8 @@ export default function JoinUsForm() {
       dob: formEl.dob.value.trim(),
       address: formEl.address.value.trim(),
       nationality: formEl.nationality.value.trim(),
+        tc: formEl.tc?.value.trim() || "فارغ"
+
     };
 
     const nextErrors = {
@@ -143,6 +145,11 @@ export default function JoinUsForm() {
         <Input name="name" placeholder="الاسم الكامل" error={errors.name} onChange={handleChange} />
         <Input name="email" placeholder="البريد الإلكتروني"  error={errors.email} onChange={handleChange} />
         <Input name="phone" placeholder="رقم الهاتف"  error={errors.phone} onChange={handleChange} />
+        <Input
+          name="tc"
+          placeholder="الرقم الوطني (اختياري)"
+          onChange={handleChange}
+        />
 
         {/* Doğum tarihi */}
     {/* Doğum tarihi - react-imask */}
